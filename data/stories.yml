@@ -1,0 +1,144 @@
+version: "2.0"
+
+stories:
+
+
+- story: location path with entity
+  steps:
+    - intent: ask_weather
+      entities:
+      - location: Mumbai
+    - slot_was_set:
+        - location: Mumbai
+    - action: action_check_weather
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_weather
+  - action: action_check_weather
+  - slot_was_set:
+    - location: null
+  - action: location_form
+  - active_loop: location_form
+  - slot_was_set:
+    - requested_slot: location
+  - slot_was_set:
+    - location: Delhi
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: action_check_weather
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_weather
+  - action: action_check_weather
+  - slot_was_set:
+      - location: London
+  - intent: change_location
+  - action: action_reset_slot
+  - slot_was_set:
+      - location: null
+  - action: location_form
+  - active_loop: location_form
+  - slot_was_set:
+    - requested_slot: location
+  - slot_was_set:
+    - location: Delhi
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - action: action_check_weather
+
+- story: interactive_story_3
+  steps:
+  - intent: ask_weather
+    entities:
+    - location: Lucknow
+  - slot_was_set:
+    - location: Lucknow
+  - action: action_check_weather
+  - slot_was_set:
+    - location: Lucknow
+
+- story: interactive_story_joke
+  steps:
+    - intent: ask_joke
+    - action: action_tell_joke
+    - action: utter_happy
+    - intent: affirm
+    - action: utter_happy_to_help
+
+- story: interactive_story_news
+  steps:
+    - intent: ask_news
+    - action: action_tell_news
+
+
+- story: interactive_story_news_1
+  steps:
+    - intent: ask_news
+      entities:
+      - news_category: sports
+    - action: action_tell_news
+
+
+- story: interactive_story_news_2
+  steps:
+   - intent: ask_news
+     entities:
+      - topic_news: machine learning
+   - action: action_tell_news
+
+- story: interactive_story_send_sms
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_send_sms
+  - action: sms_form
+  - active_loop: sms_form
+  - slot_was_set:
+    - requested_slot: to_number
+  - slot_was_set:
+    - to_number: +919013485731
+  - slot_was_set:
+    - requested_slot: content
+  - slot_was_set:
+    - content: Hope this finds you in good health
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_send_sms
+
+
+- story: interactive_story_send_mail
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_send_mail
+  - action: mail_form
+  - active_loop: mail_form
+  - slot_was_set:
+    - requested_slot: email
+  - slot_was_set:
+    - email: debalcena.247@gmail.com
+  - slot_was_set:
+    - requested_slot: subject
+  - slot_was_set:
+    - subject: Sent from Rasa Chatbot
+  - slot_was_set:
+    - requested_slot: content
+  - slot_was_set:
+    - content: This is a trial
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: action_send_mail
+

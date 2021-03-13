@@ -1,0 +1,130 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- ask_weather:
+    use_entities: true
+- change_location:
+    use_entities: true
+- greet:
+    use_entities: true
+- deny:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- ask_joke:
+    use_entities: true
+- ask_news:
+    use_entities: true
+- ask_send_sms:
+    use_entities: true
+- ask_send_mail:
+    use_entities:  true
+
+entities:
+- location
+- topic_news
+- news_category
+- to_number
+- email
+slots:
+  location:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.UnfeaturizedSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+  to_number:
+    type: text
+    auto_fill: true
+  content:
+    type: text
+  email:
+    type: text
+    auto_fill: true
+  subject:
+    type: text
+
+
+responses:
+  utter_greet:
+  - text: Hey! How can I help you?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_location:
+  - text: You loaction in {location}
+  utter_ask_location:
+  - text: Can you please tell me the location you want to know the weather for?
+  utter_affirm:
+  - text: Yes
+  utter_ask_location_form_location:
+  - text: Can you tell me the location
+  utter_submit:
+  - text: Ok. Thanks!
+  utter_slot_values:
+  - text: I will remember that the location is {location}!
+  utter_laugh:
+  - text: Did that make you laugh
+  utter_happy_to_help:
+  - text: Happy to help you
+  utter_ask_sms_form_to_number:
+  - text: Who do you want to message?(contact number with country_code)
+  utter_ask_email:
+  - text: Who do you want to send the mail to?(email_id)
+  utter_ask_subject:
+  - text: What do you want the subject to be?
+  utter_ask_content:
+  - text: What do you want to write
+
+actions:
+- action_check_weather
+- action_reset_slot
+- action_tell_joke
+- action_tell_news
+- action_send_sms
+- action_send_mail
+forms:
+  location_form:
+    location:
+    - type: from_text
+
+  sms_form:
+    to_number:
+    - type: from_text
+    content:
+    - type: from_text
+
+  mail_form:
+    email:
+    - type: from_text
+    subject:
+    - type: from_text
+    content:
+    - type: from_text
+
+
+e2e_actions: []

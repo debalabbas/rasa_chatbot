@@ -1,0 +1,33 @@
+digraph  {
+0 [class="start active", fillcolor=green, fontsize=12, label=START, style=filled];
+"-1" [class=end, fillcolor=red, fontsize=12, label=END, style=filled];
+1 [class=active, fontsize=12, label=action_session_start];
+2 [class=active, fontsize=12, label=mail_form];
+6 [class=active, fontsize=12, label=action_send_mail];
+12 [class=active, fontsize=12, label=mail_form];
+13 [class=active, fontsize=12, label=action_send_mail];
+14 [class="intent dashed active", label="  ?  ", shape=rect];
+15 [class="intent active", fillcolor=lightblue, label="send a mail for me", shape=rect, style=filled];
+16 [class="intent active", fillcolor=lightblue, label="debalcena.247@gmail.com", shape=rect, style=filled];
+17 [class="intent active", fillcolor=lightblue, label="sent from rasa", shape=rect, style=filled];
+18 [class="intent active", fillcolor=lightblue, label="this is a trial", shape=rect, style=filled];
+19 [class="intent active", fillcolor=lightblue, label="debalabbas7@gmail.com", shape=rect, style=filled];
+20 [class="intent active", fillcolor=lightblue, label="send email for me", shape=rect, style=filled];
+0 -> "-1"  [class="", key=NONE, label=""];
+0 -> 1  [class=active, key=NONE, label=""];
+1 -> 15  [class=active, key=0];
+2 -> 6  [class=active, key=NONE, label=""];
+2 -> 16  [class=active, key=0];
+2 -> 17  [class=active, key=0];
+2 -> 18  [class=active, key=0];
+2 -> 19  [class=active, key=0];
+6 -> 20  [class=active, key=0];
+12 -> 13  [class=active, key=NONE, label=""];
+13 -> 14  [class=active, key=NONE, label=""];
+15 -> 2  [class=active, key=0];
+16 -> 2  [class=active, key=0];
+17 -> 2  [class=active, key=0];
+18 -> 2  [class=active, key=0];
+19 -> 12  [class=active, key=0];
+20 -> 2  [class=active, key=0];
+}

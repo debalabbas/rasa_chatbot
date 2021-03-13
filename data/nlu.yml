@@ -1,0 +1,192 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - Tokyo
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - what is your name?
+- intent: ask_weather
+  examples: |
+    - How is the Weather today in [Mumbai](location)
+    - how is the weather in [Pune](location)
+    - how is the weather in [Hyderabad](location)
+    - how is the weather in [Chennai](location)
+    - how is the weather in [Chandigarh](location)
+    - how is the weather in [Lucknow](location)
+    - Do you mind checking the weather for me?
+    - Is it Sunny outside?
+    - what is the weather today
+    - can you check the weather for me?
+    - can you tell me the weather
+    - is it sunny in [London](location)
+    - is it sunny in [Delhi](location)
+    - how is the weather in [Delhi](location)
+    - how is the weather in [London](location)
+    - can you check the weather for me
+    - What is temprature in [Jaipur](location)
+    - what is the temprature in [Noida](location)
+    - what is the temprature in [Lisbon](location)
+    - what is the temprature in [Berlin](location)
+    - what is the temprature in [Srinagar](location)
+    - what is the temprature in [Bhopal](location)
+    - what is the temprature in [New York](location)
+    - can you tel me the weather in [Tokyo](location)
+    - can you tel me the weather in [Rome](location)
+    - can you tel me the weather in [Madrid](location)
+    - can you tel me the weather in [Melbourne](location)
+    - can you tel me the weather in [Tokyo](location)
+    - can you check the weather in [Delhi](location)
+    - what is the weather in [Manchester](location)
+    - what is the weather in [Torronto](location)
+    - what is the weather in [Los Angeles](location)
+    - what is the weather in [Miami](location)
+    - what is the weather in [Naples](location)
+
+- intent: change_location
+  examples: |
+    - i want to know weather for some other area
+    - Sorry, i want to change the location
+    - Different location please
+
+
+- intent: ask_joke
+  examples: |
+    - can you tell me a joke
+    - make me laugh
+
+- intent: ask_news
+  examples: |
+    - Send me latest news updates
+    - I want to read some news
+    - give me current affairs
+    - some current affairs pls
+    - Find some interesting news
+    - News please
+    - Get me latest updates in [science](news_category)
+    - Get me latest updates in [entertainment](news_category)
+    - Get me latest updates in [health](news_category)
+    - latest updates in [sports](news_category)
+    - whats the latest news in [business](news_category)
+    - whats the latest news in [business](news_category)
+    - whats the latest news in [technology](news_category)
+    - send news updates
+    - Fetch some news
+    - get news
+    - whats happening in this world
+    - tell me something about whats happening around
+    - interesting news pls
+    - latest updates in [blockchain](topic_news)
+    - get me latest updates in [astronomy](topic_news)
+    - any interesting updates in [physics](topic_news)
+    - I want to read something interesting
+    - I want to read news
+    - latest news about [machine learning](topic_news)
+    - latest news about [coronavirus](topic_news)
+    - latest news about [esports](topic_news)
+    - latest news about [food](topic_news)
+    - latest updates about [Taylor Swift](topic_news)
+    - latest updates about [artificial intelligence](topic_news)
+    - latest updates about [football](topic_news)
+    - latest updates about [India](topic_news)
+    - latest updates about [politics](topic_news)
+    - latest updates about [computers](topic_news)
+
+
+- intent: ask_send_sms
+  examples: |
+    - can you send a message for me
+    - can you send a text for me
+    - message [+919013485731](to_number)
+    - text [+8178033592](to_number)
+    - can you send a message to [+919911166867](to_number)
+    - send a text to [+919968271902](to_number)
+
+- intent: ask_send_mail
+  examples: |
+    - can you send a mail for me
+    - send a mail please
+    - can you send a mail to [qamar.haider7@gmail.com](email)
+    - can you send a mail to [qamar.haider8@gmail.com](email)
+    - can you send a mail to [black.smith714@gmail.com](email)
+    - can you send a mail to [debalcena.247@gmail.com](email)
+
+
